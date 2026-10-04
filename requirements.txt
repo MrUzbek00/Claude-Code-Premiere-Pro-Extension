@@ -1,0 +1,12 @@
+# No Python packages are required. Python is not a runtime requirement.
+# The project has zero npm dependencies; package.json only holds helper scripts.
+#
+# Runtime requirements:
+#   - Node.js 18 or newer (https://nodejs.org)                  -> runs mcp/server.js
+#   - Adobe Premiere Pro 2020 (14.0) or newer, Windows or macOS -> hosts the CEP panel
+#   - Claude Code CLI or Claude Code desktop app                -> MCP client
+#     install: npm install -g @anthropic-ai/claude-code
+#
+# Optional:
+#   - Git, to clone and update the repository
+#   - Adobe ZXPSignCmd, only for building a signed .zxp (scripts/package.ps1)

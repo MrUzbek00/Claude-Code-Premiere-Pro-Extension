@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Claude Bridge</title>
+  <style>
+    body { background: #232323; color: #ddd; font: 12px sans-serif; margin: 10px; }
+    .row { margin-bottom: 6px; }
+    .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: #888; margin-right: 6px; }
+    .dot.on { background: #3c3; }
+    .dot.err { background: #c33; }
+    code { color: #9cf; }
+    #log { height: 110px; overflow: auto; background: #1a1a1a; padding: 4px; font-family: monospace; font-size: 11px; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <div class="row"><span id="dot" class="dot"></span><span id="status">Starting...</span></div>
+  <div class="row">Endpoint: <code id="endpoint">-</code></div>
+  <div class="row">Token file: <code id="tokenpath">-</code></div>
+  <div id="log"></div>
+  <script>
+    window.onerror = function (m, s, l) {
+      document.getElementById("status").textContent = "Error: " + m + " (line " + l + ")";
+      document.getElementById("dot").className = "dot err";
+    };
+    document.getElementById("status").textContent = "Loading... node=" + (typeof require);
+  </script>
+  <script src="main.js"></script>
+</body>
+</html>

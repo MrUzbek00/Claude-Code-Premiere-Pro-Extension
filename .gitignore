@@ -1,0 +1,22 @@
+# Build output and signing material (cert.p12 is a private key)
+/build/
+/dist/
+/tools/
+*.p12
+*.zxp
+*.zip
+
+# Local secrets
+.env
+.env.*
+!.env.example
+.premiere-bridge/
+
+# Local AI assistant settings and session data
+.claude/
+.codex/
+
+node_modules/
+*.log
+.DS_Store
+Thumbs.db

@@ -1,0 +1,20 @@
+{
+  "name": "claude-premiere-bridge",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Control Adobe Premiere Pro from Claude Code: CEP panel + localhost bridge + MCP server",
+  "license": "MIT",
+  "engines": { "node": ">=18" },
+  "bin": { "claude-premiere-bridge": "mcp/server.js" },
+  "scripts": {
+    "install:windows": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/install.ps1",
+    "install:mac": "bash scripts/install.sh",
+    "uninstall:windows": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/uninstall.ps1",
+    "uninstall:mac": "bash scripts/uninstall.sh",
+    "package": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/package.ps1",
+    "doctor": "node scripts/doctor.cjs",
+    "start": "node mcp/server.js",
+    "check": "node --check mcp/server.js && node --check extension/client/main.js && node --check scripts/doctor.cjs",
+    "test": "node --test test/host.test.cjs test/mcp-server.test.cjs test/panel.test.cjs"
+  }
+}
